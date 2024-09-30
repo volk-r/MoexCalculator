@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var color = Color.green
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Привет, Практикум!")
+                .padding()
+                .foregroundColor(color)
+            Button("Нажми здесь!") {
+                if color == .green {
+                    self.color = .orange
+                } else {
+                    color = .green
+                }
+            }
         }
         .padding()
     }
